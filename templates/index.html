@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="row">
+    <ul class="list-group">
+    {% for post in posts %}
+        <li class="list-group-item">
+            <a href="{{ url_for('.post',post_id=post.id) }}">{{ post.title}} by {{post.user.username}}</a>
+        </li>
+    </ul>
+    {% endfor %}
+</div><!-- ./row-->
+{% endblock %}

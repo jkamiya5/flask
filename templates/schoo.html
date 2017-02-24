@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="row">
+    {% if 'username' in session %}
+        ようこそ！ {{ session['username'] }} さん！
+    {% endif %}
+    <h2> {{ message }} </h2>
+</div><!-- ./row-->
+{% endblock %}
