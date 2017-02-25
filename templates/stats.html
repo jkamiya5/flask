@@ -3,9 +3,11 @@
 {% block page_content %}
 <div class="row">
     <h1> {{ title }} </h1>
-    {% for item in itemList %}
-          <h2> {{ item.message }} </h2>
-          <img src={{item.imagePath}}></a>
-    {% endfor %}
+    <div style="margin-left:10px;margin-right:auto;width:450px;padding-bottom:50px;">
+        {% for item in itemList %}
+            <h3> {{ item.message }} </h3>
+            <img src={{item.imagePath}}></a>
+        {% endfor %}
+    </div>
 </div><!-- ./row-->
 {% endblock %}

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pythonでサクッと作るWebアプリ</title>
+    <title>Ryukyu Golden Kings Game Stats</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
@@ -25,7 +25,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('.index') }}">ミニブログ@schoo</a>
+            <a class="navbar-brand" href="{{ url_for('.index') }}">TOP PAGE</a>
+            <a class="navbar-brand" href="{{ url_for('.playerList1') }}">選手別戦績</a>
+            <a class="navbar-brand" href="{{ url_for('.playerList2') }}">選手別貢献度</a>
         </div>
         <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">

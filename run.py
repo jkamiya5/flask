@@ -12,6 +12,7 @@ import sys
 import re
 import tempImage
 import constans
+import my_function as func
 
 try:
     from StringIO import StringIO
@@ -94,8 +95,8 @@ def kings():
     return render_template('kings.html',message=message)
 
 
-@app.route('/playerList')
-def playerList():
+@app.route('/playerList1')
+def playerList1():
     
     playerList = []        
 
@@ -107,9 +108,25 @@ def playerList():
     
     return render_template('playerList.html' , playerList = playerList)
 
+@app.route('/playerList2')
+def playerList2():
+    
+    playerList = []        
+
+    for key, val in constans.playerList.items():
+        my_dic = {}
+        my_dic["pageUrl"] = "/occr/" + key
+        my_dic["playerName"] = val
+        playerList.append(my_dic)
+    
+    return render_template('playerList.html' , playerList = playerList)
+
+
 @app.route('/stats/<playerName>')
 def stats(playerName):
-    
+    obj = func.my_function()
+    obj.delFiles("static/img/")
+
     title = constans.playerList[playerName] + "のスタッツ"
     my_list = []        
 
@@ -122,13 +139,16 @@ def stats(playerName):
     
     return render_template('stats.html' , title = title, itemList = my_list)
 
+
 @app.route('/occr/<playerName>')
 def occr(playerName):
-    
-    title = constans.playerList[playerName] + "のスタッツ"
+    obj = func.my_function()
+    obj.delFiles("static/img/")
+
+    title = constans.playerList[playerName]
     my_list = []
     my_dic = {}
-    my_dic["message"] = "相関係数"
+    my_dic["message"] = "相関係数（勝敗と各項目）"
     obj = tempImage.TempImage("")
     my_dic["imagePath"] = "../" + obj.getPng1(playerName)
     my_list.append(my_dic)       

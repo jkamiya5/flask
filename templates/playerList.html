@@ -2,8 +2,10 @@
 
 {% block page_content %}
 <div class="row">
-    {% for item in playerList %}
-          <h2><a href={{item.pageUrl}}>{{item.playerName}}</a></h2>
-    {% endfor %}
+    <ul>
+        {% for item in playerList %}
+            <li><h4><a href={{item.pageUrl}}>{{item.playerName}}</a></h4></li>
+        {% endfor %}
+    </ul>
 </div><!-- ./row-->
 {% endblock %}

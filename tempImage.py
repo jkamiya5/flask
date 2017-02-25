@@ -38,7 +38,6 @@ class TempImage(object):
 
 
     def getPng(self, player, itemName):
-        
         chars = string.digits + string.ascii_letters
         target = ''.join(random.choice(chars) for i in range(64)) + '.png'
         img_name = "static/img/" + target
@@ -50,7 +49,6 @@ class TempImage(object):
         return img_name
 
     def getPng1(self, player):
-            
         chars = string.digits + string.ascii_letters
         target = ''.join(random.choice(chars) for i in range(64)) + '.png'
         img_name = "static/img/" + target

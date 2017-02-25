@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pylab
 import pandas as pd
-import matplotlib.pyplot
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 import io
 import random
 import re
+import os
 from matplotlib.font_manager import FontProperties
 
 
@@ -51,3 +51,9 @@ class my_function:
         after = obj.sort_values(by="WinLose", ascending=True)
         ax= after.plot.bar(y=['WinLose'])
         return ax
+
+    @staticmethod
+    def delFiles(targetPath):        
+        for root, dirs, files in os.walk(targetPath, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
